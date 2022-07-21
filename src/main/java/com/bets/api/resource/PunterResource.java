@@ -3,6 +3,7 @@ package com.bets.api.resource;
 import com.bets.api.dtos.PunterRequestDTO;
 import com.bets.api.dtos.PunterResponseDTO;
 import com.bets.api.entities.Punter;
+import com.bets.api.mappers.PunterMapper;
 import com.bets.api.resource.service.PunterResourceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +15,13 @@ import java.util.List;
 @RequestMapping(value = "/punters")
 @RestController
 public class PunterResource {
-    private final PunterResourceService punterResourceService;
 
-    public PunterResource(PunterResourceService punterResourceService) {
+    private final PunterResourceService punterResourceService;
+    private final PunterMapper punterMapper;
+
+    public PunterResource(PunterResourceService punterResourceService, PunterMapper punterMapper) {
         this.punterResourceService = punterResourceService;
+        this.punterMapper = punterMapper;
     }
 
     @GetMapping

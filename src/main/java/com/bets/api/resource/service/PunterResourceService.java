@@ -17,7 +17,6 @@ import java.util.Objects;
 public class PunterResourceService {
     private final PunterService punterService;
     private final PunterMapper punterMapper;
-
     private final String FIND_MESSAGE = "Não foi possível recuperar o recurso. ID é obrigatório.";
 
     public PunterResourceService(PunterService punterService, PunterMapper punterMapper) {

@@ -4,10 +4,12 @@ import com.bets.api.dtos.PunterRequestDTO;
 import com.bets.api.dtos.PunterResponseDTO;
 import com.bets.api.entities.Punter;
 import org.mapstruct.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
+
 public interface PunterMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true)
